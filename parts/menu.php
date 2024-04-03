@@ -13,7 +13,7 @@
         </span>
     </div>
 </section>
-<section class="cat_menu cat_block">
+<section id="read_article" class="cat_menu cat_block">
     <ul class="left">
         <li class="item">
             <a class="title" href="<?php $this->options->siteUrl(); ?>">首页</a>

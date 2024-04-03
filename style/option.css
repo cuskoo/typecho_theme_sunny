@@ -350,21 +350,9 @@ select{
 .cat_basic_welcome .diary_lovers_avatar {
     display: none;
 }
-
-.cat_key {
-    display: block;
-}
-#jihuo {
-    color: #fff;
-    background: green;
-    width: 5rem;
-    text-align: center;
-    font-size: 17px;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    box-shadow: var(--box-shadow);
-    font-weight: bold;
+.typecho-page-main .typecho-option .multiline {
+    display: inline-block;
+    margin: 0.5rem;
 }
 .theme_title {
     font-size: 4rem;

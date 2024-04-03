@@ -94,8 +94,7 @@
                         
                         <!-- 标题 -->
                         <div class="postlist_title">
-                            <span class="postlist_title_arrow">»</span>
-                            <a href="<?php echo $this->permalink ?>">
+                            <a href="<?php echo $this->permalink ?>#read_article">
                                 <?php $this->title() ?>
                             </a>
                         </div>
@@ -122,7 +121,9 @@
                         
                         <!-- 标签 -->
                         <div class="postlist_tags" itemprop="keywords" >
-                            <span class="pinglun">评论<?php $this->commentsNum('0', '1', '%d'); ?></span>
+                            <a href="<?php echo $this->permalink ?>#comments">
+                                <span class="pinglun">评论<?php $this->commentsNum('0', '1', '%d'); ?></span>
+                            </a>
                             <?php $this->tags(' ', true, ''); ?>
                         </div>
                         

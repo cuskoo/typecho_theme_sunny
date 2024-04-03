@@ -42,9 +42,6 @@
 	background:var(--theme-60);
 }
 html {
-	/* 默认颜色 */
-	font-size:16px;
-	/* --theme在head.php */
 	--main-color: 52 73 94;
 	--main: rgb(var(--main-color));
     --C: rgb(var(--main-color) / 70%);
@@ -161,7 +158,7 @@ img.lazyloaded {
     position: relative;
     margin: var(--margin) auto;
     width: calc(100vw - 2 * var(--margin) auto);
-    max-width: 1200px;
+    max-width: 75rem;
     min-height: calc(100vh - 2 * var(--margin));
 }
 .main{
@@ -174,7 +171,7 @@ img.lazyloaded {
     width: calc(100% - 20rem - var(--margin));
 }
 .main_sidebar{
-    width: 20rem;
+    width: 24rem;
     margin-left: var(--margin);
     display: flex;
     flex-direction: column;
@@ -258,7 +255,7 @@ img.lazyloaded {
     flex-direction: column;
     align-items: center;
     margin-bottom: var(--margin);
-    height: 15rem;
+    height: 17.5rem;
     justify-content: center;
 }
 .cat_top .logo {
@@ -556,52 +553,21 @@ img.lazyloaded {
     color: var(--theme-30);
     font-family: Arial;
 }
-.postlist_tags a:before{
+.postlist_tags a:not(:first-child):before{
     content: '#';
     color: var(--A);
     font-family: Arial;
 }
-.postlist_tags a:after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0.1rem;
-    bottom: -0.05rem;
-    left: 0;
-    background-color: var(--theme-60);
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    -o-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
-.postlist_tags a:hover:after {
-    height: 0.1rem;
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    -o-transform: scaleX(1);
-    transform: scaleX(1);
-}
-
 .postlist_info {
     padding-left: 4.4rem;
 }
 .postlist_title {
     line-height: 2.25rem;
     font-size: 1.25rem;
-    margin: 1rem 0 1rem -1.4rem;
+    margin: 1rem 0;
     font-weight: bold;
     display: flex;
     gap: 0.5rem;
-}
-.postlist_title_arrow {
-    color: var(--theme);
-    font-family: serif;
-    opacity: 0;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
 }
 .postlist_title a{
     display: block;
@@ -613,9 +579,6 @@ img.lazyloaded {
 }
 .postlist:hover .postlist_title a{
     color: var(--theme);
-}
-.postlist:hover .postlist_title_arrow{
-    opacity: 1;
 }
 .postlist_album {    
     display: grid;
@@ -775,13 +738,11 @@ aside .recent_comments {
     position: relative;
     flex-direction: row;
     line-height: 2rem;
+    align-items: center;
     gap: 0.75rem;
 }
 .cat_recentcomment_list:last-child{
     padding-bottom: 0;
-}
-.recent_comments .cat_recentcomment_list:nth-child(4) {
-    padding-bottom: 1rem;
 }
 .cat_recentcomment_list .left .num{
     color: #fff;
@@ -947,12 +908,14 @@ html.darkmode {
 
 @media (max-width:650px) {
     html {
-        font-size: 14px;
     	--radius: 0.5rem;
     	--margin: 1rem;
     }
     .main_screen {
         margin: calc(2 * var(--margin)) var(--margin) calc(6 * var(--margin));
+    }
+    .postlist_info {
+        padding-left: 0;
     }
     #comments .cat_comment_respond_form .head {
         flex-direction: column;

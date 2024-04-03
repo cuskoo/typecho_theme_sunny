@@ -13,7 +13,7 @@
         <?php $cidArray = explode(",", $this->options->cat_aside_toppost); ?>
         <?php foreach ($cidArray as $i => $cid) :?>
             <?php $this->widget('Widget_Archive@hots' . $cid, 'pageSize=1&type=post', 'cid=' . $cid)->to($cat_post); ?>
-            <a class="cat_recentcomment_list" href="<?php echo $cat_post->permalink; ?>">
+            <a class="cat_recentcomment_list" href="<?php echo $cat_post->permalink; ?>#read_article">
                 <div class="left">
                     <span class="num"><?php echo $i+1; ?></span>
                 </div>

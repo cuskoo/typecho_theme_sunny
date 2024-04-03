@@ -365,13 +365,13 @@ if(isset($_POST['type'])) {
     <label class="typecho-label">欢迎使用Sunny主题</label>
     <div class="description">
         <li><h3>您使用的是Sunny开源版，可任意修改本主题，但请勿去除本模块、以及控制台中的版权信息。</h3></li>
-        <li>本主题支持<u>Hanny的Links插件</u>，开启自动生成友链页面，<a href="//www.imhan.com/archives/typecho-links/" target="_blank">点此去官网</a>下载插件。也可在喵喵聊天群内群文件下载。</li>
+        <li>本主题支持<u>Hanny的Links插件</u>，开启自动生成友链页面，<a href="//www.imhan.com/archives/typecho-links/" target="_blank">点此去官网</a>下载插件。【建议使用懵仙兔兔的升级版，可以在群文件下载】。</li>
         <li>作者：<a href="https://www.mmbkz.cn/" target="_blank">火喵酱</a></li>
         <li>官网：<a href="https://store.mmbkz.cn" target="_blank">https://store.mmbkz.cn</a></li>
         <li>Github仓库：<a href="https://github.com/ScarletDor/typecho_theme_sunny" target="_blank">https://github.com/ScarletDor/typecho_theme_sunny</a></li>
         <li>官群：103659317</li>
         <li>　</li>
-        <li style="color:green">喵喵很努力用心的制作了这款主题，如果您喜欢，仅需一杯低价拿铁的价格就可以入手这款主题的正式版。<br>如果您想请喵喵喝更高级的拿铁，欢迎随时打赏喵喵！打赏时标明您的身份，喵喵会记录到博客里的！</li>
+        <li style="color:green">喵喵很努力用心的制作了这款主题，如果您喜欢，可以入手这款主题的正式版。<br>如果您想请喵喵喝一杯拿铁，欢迎随时打赏喵喵！打赏时标明您的身份，喵喵会记录到博客里的！</li>
         <li>　</li>
     </div>
     <div style="display:flex;flex-direction: row;">
@@ -411,7 +411,19 @@ if(isset($_POST['type'])) {
          说明：开头需带 “ # ” ，默认主题色为 #ff6a6a（淡红色）'
     );
     $form->addInput($user_themecolor);
-
+    
+    $cat_scale_switch = new Typecho_Widget_Helper_Form_Element_Radio(
+        'cat_scale_switch',
+        array(
+            '14' => '偏小（默认）',
+            '15' => '居中',
+            '16' => '偏大'
+        ),
+        '14',
+        '页面整体缩放尺度'
+    );
+    $form->addInput($cat_scale_switch->multiMode());
+     
     /* 自定义主题色 */
     $user_avatar = new Typecho_Widget_Helper_Form_Element_Text(
         'user_avatar',
@@ -423,7 +435,7 @@ if(isset($_POST['type'])) {
     $form->addInput($user_avatar);
 
     /* 昼夜模式 */
-    $cat_darkmode = new Typecho_Widget_Helper_Form_Element_Select(
+    $cat_darkmode = new Typecho_Widget_Helper_Form_Element_Radio(
         'cat_darkmode',
         array(
             'auto' => '自动',
@@ -437,7 +449,7 @@ if(isset($_POST['type'])) {
     $form->addInput($cat_darkmode->multiMode());
 
     /* 关闭所有评论 */
-    $cat_comment_allow = new Typecho_Widget_Helper_Form_Element_Select(
+    $cat_comment_allow = new Typecho_Widget_Helper_Form_Element_Radio(
         'cat_comment_allow',
         array(
             'on' => '开启所有评论区',

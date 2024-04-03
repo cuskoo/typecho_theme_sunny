@@ -86,6 +86,7 @@
             	--theme-30: <?php echo ($this->options->user_themecolor ? $this->options->user_themecolor . '4d' : '#ff6a6a4a') ?>;
             	--theme-60: <?php echo ($this->options->user_themecolor ? $this->options->user_themecolor . '99' : '#ff6a6a99') ?>;
             	--theme-80: <?php echo ($this->options->user_themecolor ? $this->options->user_themecolor . 'cc' : '#ff6a6acc') ?>;
+            	font-size: <?php echo $this->options->cat_scale_switch?$this->options->cat_scale_switch:'14';?>px;
             }
         </style>
         <script src="<?php $this->options->themeUrl('style/jquery.min.js'); ?>"></script>
